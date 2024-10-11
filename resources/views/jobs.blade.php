@@ -20,104 +20,24 @@
         </div>
         <div class="container-jobs">
 
+            @foreach ($positions as $position)
             <div class="job-card">
-                <img src="images/image1.png" alt="Company Logo">
-                <h2 class="job-title">مصمم جرافيك</h2>
+                <img src="{{url($position->image)}}" alt="Company Logo">
+                <h2 class="job-title"> {{ $position->title }}</h2>
                 <p class="job-description">
-                    هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل
-                    الخارجي للنص أو شكل توضع الفقرات </p>
+                    {{ $position->description }}
+                    </p>
                 <div class="job-tags">
-                    <span class="tag">دوام كامل</span>
-                    <span class="tag"> سنة علي الاقل</span>
-                    <span class="tag">خبير</span>
+                    @foreach ($position->competencies as $competency)
+                    <span class="tag">{{ $competency->competency }}</span>
+                    @endforeach
                 </div>
                 <div class="job-actions">
-                    <button class="btn btn-primary">تفاصيل الوظيفة </button>
+                    <a class="btn btn-primary" href="{{route('position', $position->id)}}">تفاصيل الوظيفة </a>
 
                 </div>
             </div>
-            <div class="job-card">
-                <img src="images/image1.png" alt="Company Logo">
-                <h2 class="job-title">مصمم جرافيك</h2>
-                <p class="job-description">
-                    هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل
-                    الخارجي للنص أو شكل توضع الفقرات </p>
-                <div class="job-tags">
-                    <span class="tag">دوام كامل</span>
-                    <span class="tag"> سنة علي الاقل</span>
-                    <span class="tag">خبير</span>
-                </div>
-                <div class="job-actions">
-                    <button class="btn btn-primary">تفاصيل الوظيفة </button>
-
-                </div>
-            </div>
-            <div class="job-card">
-                <img src="images/image1.png" alt="Company Logo">
-                <h2 class="job-title">مصمم جرافيك</h2>
-                <p class="job-description">
-                    هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل
-                    الخارجي للنص أو شكل توضع الفقرات </p>
-                <div class="job-tags">
-                    <span class="tag">دوام كامل</span>
-                    <span class="tag"> سنة علي الاقل</span>
-                    <span class="tag">خبير</span>
-                </div>
-                <div class="job-actions">
-                    <button class="btn btn-primary">تفاصيل الوظيفة </button>
-
-                </div>
-            </div>
-            <div class="job-card">
-                <img src="images/image1.png" alt="Company Logo">
-                <h2 class="job-title">مصمم جرافيك</h2>
-                <p class="job-description">
-                    هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل
-                    الخارجي للنص أو شكل توضع الفقرات </p>
-                <div class="job-tags">
-                    <span class="tag">دوام كامل</span>
-                    <span class="tag"> سنة علي الاقل</span>
-                    <span class="tag">خبير</span>
-                </div>
-                <div class="job-actions">
-                    <button class="btn btn-primary">تفاصيل الوظيفة </button>
-
-                </div>
-            </div>
-            <div class="job-card">
-                <img src="images/image1.png" alt="Company Logo">
-                <h2 class="job-title">مصمم جرافيك</h2>
-                <p class="job-description">
-                    هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل
-                    الخارجي للنص أو شكل توضع الفقرات </p>
-                <div class="job-tags">
-                    <span class="tag">دوام كامل</span>
-                    <span class="tag"> سنة علي الاقل</span>
-                    <span class="tag">خبير</span>
-                </div>
-                <div class="job-actions">
-                    <button class="btn btn-primary">تفاصيل الوظيفة </button>
-
-                </div>
-            </div>
-            <div class="job-card">
-                <img src="images/image1.png" alt="Company Logo">
-                <h2 class="job-title">مصمم جرافيك</h2>
-                <p class="job-description">
-                    هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل
-                    الخارجي للنص أو شكل توضع الفقرات </p>
-                <div class="job-tags">
-                    <span class="tag">دوام كامل</span>
-                    <span class="tag"> سنة علي الاقل</span>
-                    <span class="tag">خبير</span>
-                </div>
-                <div class="job-actions">
-                    <button class="btn btn-primary">تفاصيل الوظيفة </button>
-
-                </div>
-            </div>
-       
-        
+            @endforeach
 
         </div>
     </div>
